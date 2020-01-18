@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tester</string>
+    <string name="buttonMain">Main Screen Button</string>
+    <string name="buttonSecond">Second Screen Button</string>
+    <string name="buttonThird">Third Screen Button</string>
+    <string name="buttonFourth">Fourth Screen Button</string>
+
+</resources>

@@ -1,0 +1,22 @@
+#Database Configuration
+
+#provide the url for database
+spring:
+  datasource:
+    jdbcUrl: jdbc:mysql://coms-309-jr-4.misc.iastate.edu:3306/Barbarians?useSSL=false
+    username: jr4
+    password: Pass|Fail1
+    driver-class-name: com.mysql.jdbc.Driver
+  #    pool-size:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+
+  thymeleaf:
+    mode: HTML
+
+
+server:
+  port: 8080

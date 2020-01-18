@@ -1,0 +1,73 @@
+stages:
+    - mavenbuild
+    - maventest
+    - autodeploy
+    - gradlebuild
+    - gradletest
+    
+maven-build:
+    stage: mavenbuild
+    tags:
+        - backend
+    script:
+        - cd BackEnd
+        - cd Jschirm
+        - mvn package -B
+        
+maven-test:
+    stage: maventest
+    tags:
+        - backend
+    script:
+        - cd BackEnd
+        - cd Jschirm
+        - mvn test
+    artifacts:
+        paths:
+            - /target/*.jar
+            
+autoDeploy:
+    stage: autodeploy
+    tags:
+        - backend
+    script:
+        - cd BackEnd
+        - cd Jschirm
+        - mvn package
+        - sudo mv target/*.jar /target/web-demo.jar
+        - sudo systemctl stop system-web-demo
+        - sudo systemctl start system-web-demo
+        
+gradle-build:
+    image: java:8-jdk
+    stage: gradlebuild
+    before_script:
+        - export GRADLE_USER_HOME=`pwd`/.gradle
+        - chmod +x ./FrontEnd/Demo3/BarbarianIO/gradlew
+    tags:
+        ["frontend"]
+    script:
+        - cd FrontEnd
+        - cd Demo3
+        - cd BarbarianIO
+        - ./gradlew assemble
+    artifacts:
+        paths:
+        - FrontEnd/app/build/outputs/
+
+gradle-test:
+    image: java:8-jdk
+    stage: gradletest
+    before_script:
+        - export GRADLE_USER_HOME=`pwd`/.gradle
+        - chmod +x ./FrontEnd/Demo3/BarbarianIO/gradlew
+    tags:
+        ["frontend"]
+    script:
+        - cd FrontEnd
+        - cd Demo3
+        - cd BarbarianIO
+        - ./gradlew assemble
+    artifacts:
+        paths:
+        - FrontEnd/app/build/outputs/

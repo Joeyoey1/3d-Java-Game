@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HelloWorld Welcome to my App.</string>
+    <string name="button">Next Page</string>
+    <string name="new_button">Go Back</string>
+
+    <string name="this_is_to_check_how_to_change_stuff">This is to check how to change stuff</string>
+    <string name="text2">Welcome To the Second Page</string>
+</resources>

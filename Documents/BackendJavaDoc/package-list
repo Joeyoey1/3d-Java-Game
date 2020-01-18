@@ -1,0 +1,6 @@
+com.jschirm.playerservice
+com.jschirm.playerservice.api
+com.jschirm.playerservice.database
+com.jschirm.playerservice.datasource
+com.jschirm.playerservice.model
+com.jschirm.playerservice.websocket

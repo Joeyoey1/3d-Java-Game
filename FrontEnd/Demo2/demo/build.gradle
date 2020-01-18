@@ -1,0 +1,20 @@
+plugins {
+    //id 'org.springframework.boot' version '2.1.8.RELEASE'
+    //id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    //id 'java'
+}
+
+
+dependencies {
+    'org.springframework.boot:spring-boot-starter-data-jdbc'
+    'org.springframework.boot:spring-boot-starter-data-jpa'
+    'org.springframework.boot:spring-boot-starter-jdbc'
+    'org.springframework.boot:spring-boot-starter-web'
+    'org.springframework.boot:spring-boot-starter-webflux'
+    'org.springframework.session:spring-session-jdbc'
+    'com.h2database:h2'
+    'mysql:mysql-connector-java'
+    'org.springframework.boot:spring-boot-starter-test'
+    'io.projectreactor:reactor-test'
+    'com.barbarian.game'
+}
